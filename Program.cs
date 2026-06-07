@@ -6,6 +6,8 @@ using FluentValidation;
 using MediatR;
 using AgendaApi.Behaviors;
 using AgendaApi.Exceptions;
+using AgendaApi.Services;
+using AgendaApi.Workers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -36,6 +38,19 @@ builder.Services.AddMediatR(cfg =>
     // REGISTRAR EL PIPELINE DE VALIDACIÓN
     cfg.AddOpenBehavior(typeof(ValidationBehavior<,>));
 });
+
+//cola de notificaciones
+builder.Services.AddSingleton<INotificationQueue, NotificationQueue>();
+
+// Registrar el Worker como un servicio hospedado para que se ejecute en segundo plano
+builder.Services.AddHostedService<NotificationWorker>();
+
+// Servicio real de envío usando Resend (requiere API Key válida)
+builder.Services.AddHttpClient<IEmailService, ResendEmailService>();
+
+// Registramos el servicio de Twilio como Scoped
+builder.Services.AddScoped<ISmsService, TwilioSmsService>();
+
 
 
 var app = builder.Build();

@@ -1,5 +1,6 @@
 using AgendaApi.Data;
 using MediatR;
+using AgendaApi.Services; // Para la cola de notificaciones
 
 namespace AgendaApi.Features.Eventos;
 
@@ -7,7 +8,13 @@ public class ActualizarEventoHandler : IRequestHandler<ActualizarEventoCommand, 
 {
     private readonly AgendaContext _context;
 
-    public ActualizarEventoHandler(AgendaContext context) => _context = context;
+    private readonly INotificationQueue _queue;
+
+    public ActualizarEventoHandler(AgendaContext context, INotificationQueue queue)
+    {
+        _context = context;
+        _queue = queue;
+    }
 
     public async Task<bool> Handle(ActualizarEventoCommand request, CancellationToken cancellationToken)
     {
@@ -30,6 +37,9 @@ public class ActualizarEventoHandler : IRequestHandler<ActualizarEventoCommand, 
         evento.SmsEnviado = false;
 
         await _context.SaveChangesAsync(cancellationToken);
+
+        await _queue.EscribirEventoAsync(evento.Id);
+
         return true;
     }
 }

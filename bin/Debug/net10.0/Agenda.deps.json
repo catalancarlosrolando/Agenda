@@ -14,7 +14,8 @@
           "Microsoft.EntityFrameworkCore.Design": "10.0.6",
           "Microsoft.EntityFrameworkCore.Sqlite": "10.0.6",
           "NSwag.AspNetCore": "14.7.1",
-          "Scalar.AspNetCore": "2.14.14"
+          "Scalar.AspNetCore": "2.14.14",
+          "Twilio": "7.14.9"
         },
         "runtime": {
           "Agenda.dll": {}
@@ -887,6 +888,31 @@
           }
         }
       },
+      "System.IdentityModel.Tokens.Jwt/8.3.1": {
+        "dependencies": {
+          "Microsoft.IdentityModel.JsonWebTokens": "8.14.0",
+          "Microsoft.IdentityModel.Tokens": "8.14.0"
+        },
+        "runtime": {
+          "lib/net9.0/System.IdentityModel.Tokens.Jwt.dll": {
+            "assemblyVersion": "8.3.1.0",
+            "fileVersion": "8.3.1.60117"
+          }
+        }
+      },
+      "Twilio/7.14.9": {
+        "dependencies": {
+          "Microsoft.IdentityModel.Tokens": "8.14.0",
+          "Newtonsoft.Json": "13.0.3",
+          "System.IdentityModel.Tokens.Jwt": "8.3.1"
+        },
+        "runtime": {
+          "lib/net6.0/Twilio.dll": {
+            "assemblyVersion": "7.14.9.0",
+            "fileVersion": "7.14.9.0"
+          }
+        }
+      },
       "YamlDotNet/16.3.0": {
         "runtime": {
           "lib/net8.0/YamlDotNet.dll": {
@@ -1259,6 +1285,20 @@
       "sha512": "sha512-aRZlojCCGEHDKqh43jaDgaVpYETsgd7Nx4g1zwLKMtv4iTo0627715ajEFNpEEBTgLmvZuv8K0EVxc3sM4NWJA==",
       "path": "system.composition.typedparts/9.0.0",
       "hashPath": "system.composition.typedparts.9.0.0.nupkg.sha512"
+    },
+    "System.IdentityModel.Tokens.Jwt/8.3.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-SxdCv+SmnKOhUvryKvrpWJnkuVHj3hU8pUwj7R8zthi73TlBUlMyavon9qfuJsjnqY+L7jusp3Zo0fWFX6mwtw==",
+      "path": "system.identitymodel.tokens.jwt/8.3.1",
+      "hashPath": "system.identitymodel.tokens.jwt.8.3.1.nupkg.sha512"
+    },
+    "Twilio/7.14.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-dYFgEoNofKasj2cpYddZT7yVkBexkQz4eTlQ4c72BO2H1H8UbTGGl9Aa7NIFBUuTcdNWOYwIZlHjmitlRng28g==",
+      "path": "twilio/7.14.9",
+      "hashPath": "twilio.7.14.9.nupkg.sha512"
     },
     "YamlDotNet/16.3.0": {
       "type": "package",

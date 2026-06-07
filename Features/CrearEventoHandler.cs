@@ -1,5 +1,6 @@
 using AgendaApi.Models; // Ajustá al namespace de tu DbContext y Evento
 using AgendaApi.Data;   // Tu namespace del ApplicationDbContext
+using AgendaApi.Services; // Para la cola de notificaciones
 using MediatR;
 
 namespace AgendaApi.Features.Eventos;
@@ -7,11 +8,13 @@ namespace AgendaApi.Features.Eventos;
 public class CrearEventoHandler : IRequestHandler<CrearEventoCommand, int>
 {
     private readonly AgendaContext _context;
+    private readonly INotificationQueue _queue;
 
     // Inyectamos el DbContext directamente en el Handler, ya no en el controlador
-    public CrearEventoHandler(AgendaContext context)
+    public CrearEventoHandler(AgendaContext context, INotificationQueue queue)
     {
         _context = context;
+        _queue = queue;
     }
 
     public async Task<int> Handle(CrearEventoCommand request, CancellationToken cancellationToken)
@@ -34,6 +37,11 @@ public class CrearEventoHandler : IRequestHandler<CrearEventoCommand, int>
         // Guardamos en la base de datos de forma asíncrona
         _context.Eventos.Add(nuevoEvento);
         await _context.SaveChangesAsync(cancellationToken);
+
+        // Metemos el ID en la cola en memoria. Esto tarda menos de 1 milisegundo.
+
+        // mientras el proceso pesado se va a ejecutar por detrás.
+        await _queue.EscribirEventoAsync(nuevoEvento.Id);
 
         // Devolvemos el ID generado para que el controlador arme la respuesta HTTP
         return nuevoEvento.Id;

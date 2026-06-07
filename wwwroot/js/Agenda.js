@@ -74,7 +74,7 @@ export class AgendaApp {
     async buscarEvento() {
         const query = document.getElementById('titulo').value;
         const eventos = await this.eventoService.buscarEvento(query);
-        this.mainContainer.innerHTML = this.homeEventos.render(eventos); z
+        this.mainContainer.innerHTML = this.homeEventos.render(eventos);
     }
 
     async postManual() {

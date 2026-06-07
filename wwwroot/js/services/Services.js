@@ -39,9 +39,22 @@ export class EventoServices {
     }
 
     async buscarEvento(titulo) {
-        const res = await fetch(`${this.API_URL}/buscar/${titulo}`);
-        const eventos = await res.json();
-        return eventos;
+        try {
+
+            const res = await fetch(`${this.API_URL}/buscar/${titulo}`);
+            if (res.ok) {
+                return await res.json();
+            }
+            const errorData = await res.json().catch(() => null); // Intentamos parsear el error, pero si no es JSON, lo ignoramos
+            if (errorData) {
+                alert("Lo siento:\n" + errorData.mensaje);
+                return
+            }
+        }
+        catch (error) {
+            console.error('Error al buscar el evento:', error);
+            alert('Error al buscar el evento. Por favor, inténtalo de nuevo.');
+        }
     }
 
     async actualizarEvento(datos) {

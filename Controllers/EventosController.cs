@@ -21,9 +21,12 @@ namespace AgendaApi.Controllers
 
         private readonly IMediator _mediator;
 
-        public EventosController(IMediator mediator)
+        private readonly AgendaContext _context;
+
+        public EventosController(IMediator mediator, AgendaContext context)
         {
             _mediator = mediator;
+            _context = context;
         }
 
         //get api/eventos
@@ -88,6 +91,23 @@ namespace AgendaApi.Controllers
 
             return NoContent(); // Si se eliminó correctamente, devolvemos un 204 No Content
         }
+
+        [HttpGet("buscar/{titulo}")] // Agregamos un prefijo 'buscar' para no chocar con el ID
+        public async Task<ActionResult<IEnumerable<Evento>>> GetEventoPorTitulo(string titulo)
+        {
+            // Usamos .Where para buscar coincidencias parciales (como un LIKE en SQL)
+            var eventos = await _context.Eventos
+                .Where(e => e.Titulo.ToLower().Contains(titulo.ToLower()))
+                .ToListAsync();
+
+            if (!eventos.Any())
+            {
+                return NotFound(new { mensaje = $"No se encontraron eventos con el título: {titulo}" });
+            }
+
+            return eventos;
+        }
+
     }
 
 }

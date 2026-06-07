@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "RNWoEcqKmM0=",
+  "dgSpecHash": "3y1MNV2CZ2I=",
   "success": true,
   "projectFilePath": "C:\\Users\\office\\Documents\\UNIVERSIDAD DE CIENCIAS EXACTAS\\3er año\\Desarrollo Backend 2\\Practica 2\\Agenda\\Agenda.csproj",
   "expectedPackageFiles": [
@@ -57,6 +57,8 @@
     "C:\\Users\\office\\.nuget\\packages\\system.composition.hosting\\9.0.0\\system.composition.hosting.9.0.0.nupkg.sha512",
     "C:\\Users\\office\\.nuget\\packages\\system.composition.runtime\\9.0.0\\system.composition.runtime.9.0.0.nupkg.sha512",
     "C:\\Users\\office\\.nuget\\packages\\system.composition.typedparts\\9.0.0\\system.composition.typedparts.9.0.0.nupkg.sha512",
+    "C:\\Users\\office\\.nuget\\packages\\system.identitymodel.tokens.jwt\\8.3.1\\system.identitymodel.tokens.jwt.8.3.1.nupkg.sha512",
+    "C:\\Users\\office\\.nuget\\packages\\twilio\\7.14.9\\twilio.7.14.9.nupkg.sha512",
     "C:\\Users\\office\\.nuget\\packages\\yamldotnet\\16.3.0\\yamldotnet.16.3.0.nupkg.sha512"
   ],
   "logs": []
