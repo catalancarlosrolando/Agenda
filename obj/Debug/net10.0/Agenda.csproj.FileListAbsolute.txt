@@ -154,7 +154,6 @@ C:\Users\office\Documents\UNIVERSIDAD DE CIENCIAS EXACTAS\3er año\Desarrollo Ba
 C:\Users\office\Documents\UNIVERSIDAD DE CIENCIAS EXACTAS\3er año\Desarrollo Backend 2\Practica 2\Agenda\obj\Debug\net10.0\compressed\7un2offcbz-{0}-luesonr7mg-luesonr7mg.gz
 C:\Users\office\Documents\UNIVERSIDAD DE CIENCIAS EXACTAS\3er año\Desarrollo Backend 2\Practica 2\Agenda\obj\Debug\net10.0\compressed\lojk2czp2q-{0}-q3jond4ah0-q3jond4ah0.gz
 C:\Users\office\Documents\UNIVERSIDAD DE CIENCIAS EXACTAS\3er año\Desarrollo Backend 2\Practica 2\Agenda\obj\Debug\net10.0\compressed\axisosef2n-{0}-mom276ggpa-mom276ggpa.gz
-C:\Users\office\Documents\UNIVERSIDAD DE CIENCIAS EXACTAS\3er año\Desarrollo Backend 2\Practica 2\Agenda\obj\Debug\net10.0\compressed\3i82682ao0-{0}-umkcg2kmmc-umkcg2kmmc.gz
 C:\Users\office\Documents\UNIVERSIDAD DE CIENCIAS EXACTAS\3er año\Desarrollo Backend 2\Practica 2\Agenda\bin\Debug\net10.0\Namotion.Reflection.dll
 C:\Users\office\Documents\UNIVERSIDAD DE CIENCIAS EXACTAS\3er año\Desarrollo Backend 2\Practica 2\Agenda\bin\Debug\net10.0\NJsonSchema.dll
 C:\Users\office\Documents\UNIVERSIDAD DE CIENCIAS EXACTAS\3er año\Desarrollo Backend 2\Practica 2\Agenda\bin\Debug\net10.0\NJsonSchema.Annotations.dll
@@ -182,5 +181,6 @@ C:\Users\office\Documents\UNIVERSIDAD DE CIENCIAS EXACTAS\3er año\Desarrollo Ba
 C:\Users\office\Documents\UNIVERSIDAD DE CIENCIAS EXACTAS\3er año\Desarrollo Backend 2\Practica 2\Agenda\obj\Debug\net10.0\compressed\cj3wpisfoo-{0}-y117c7ijsd-y117c7ijsd.gz
 C:\Users\office\Documents\UNIVERSIDAD DE CIENCIAS EXACTAS\3er año\Desarrollo Backend 2\Practica 2\Agenda\bin\Debug\net10.0\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\office\Documents\UNIVERSIDAD DE CIENCIAS EXACTAS\3er año\Desarrollo Backend 2\Practica 2\Agenda\bin\Debug\net10.0\Twilio.dll
-C:\Users\office\Documents\UNIVERSIDAD DE CIENCIAS EXACTAS\3er año\Desarrollo Backend 2\Practica 2\Agenda\obj\Debug\net10.0\compressed\9u9z6nmre7-{0}-6txpa67c4c-6txpa67c4c.gz
-C:\Users\office\Documents\UNIVERSIDAD DE CIENCIAS EXACTAS\3er año\Desarrollo Backend 2\Practica 2\Agenda\obj\Debug\net10.0\compressed\2elylwwdca-{0}-4hj1gngx0l-4hj1gngx0l.gz
+C:\Users\office\Documents\UNIVERSIDAD DE CIENCIAS EXACTAS\3er año\Desarrollo Backend 2\Practica 2\Agenda\obj\Debug\net10.0\compressed\2elylwwdca-{0}-5sz9m0x7n7-5sz9m0x7n7.gz
+C:\Users\office\Documents\UNIVERSIDAD DE CIENCIAS EXACTAS\3er año\Desarrollo Backend 2\Practica 2\Agenda\obj\Debug\net10.0\compressed\9u9z6nmre7-{0}-plo34mq95e-plo34mq95e.gz
+C:\Users\office\Documents\UNIVERSIDAD DE CIENCIAS EXACTAS\3er año\Desarrollo Backend 2\Practica 2\Agenda\obj\Debug\net10.0\compressed\3i82682ao0-{0}-mo5kqqn1ef-mo5kqqn1ef.gz

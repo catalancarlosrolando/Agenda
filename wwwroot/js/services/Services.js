@@ -58,7 +58,6 @@ export class EventoServices {
     }
 
     async actualizarEvento(datos) {
-
         try {
             // 5. Enviamos a la API
             const res = await fetch(`${this.API_URL}/${datos.id}`, {
@@ -84,4 +83,30 @@ export class EventoServices {
 
 
     }
+
+    async confirmarAlerta(id, estado) {
+        try {
+            const res = await fetch(`${this.API_URL}/${id}/confirmacion`, {
+                method: 'PATCH',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(estado)
+            });
+            if (res.ok) {
+                return true;
+            }
+
+            const errorData = await res.json().catch(() => null); // Intentamos parsear el error, pero si no es JSON, lo ignoramos
+            if (errorData) {
+                alert("Cuerpo completo del error:\n" + errorData.mensaje);
+            }
+
+        }
+        catch (error) {
+            alert('Error al actualizar el evento. Por favor, inténtalo de nuevo.');
+        };
+
+
+
+    }
+
 }

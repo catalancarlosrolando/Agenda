@@ -77,19 +77,17 @@ export class AgendaApp {
         this.mainContainer.innerHTML = this.homeEventos.render(eventos);
     }
 
-    async postManual() {
-        const input = document.getElementById('input-manual');
-        const titulo = input.value.trim();
-        const formulario = new FormData();
-        formulario.append('titulo', titulo);
-        const res = await fetch('/api/eventos/manual', {
-            method: 'POST',
-            body: formulario,
-        });
-        const mensaje = await res.text();
-        if (mensaje) {
-            alert(mensaje);
+    async confirmarAlerta(id, estado, boton) {
+        const eventos = await this.eventoService.confirmarAlerta(id, estado);
+        if (eventos) {
+
+            boton.className = "btn btn-sm btn-outline-success border-2 rounded-circle p-2 d-inline-flex align-items-center justify-content-center";
+            boton.style.backgroundColor = "rgba(25, 135, 84, 0.1)";
+            boton.setAttribute('data-estado', 'true');
+            boton.setAttribute('title', 'Alerta Confirmada');
+
         }
+
     }
 }
 

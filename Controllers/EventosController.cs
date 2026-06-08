@@ -79,6 +79,15 @@ namespace AgendaApi.Controllers
 
             return NoContent(); // Si se actualizó correctamente, devolvemos un 204 No Content
         }
+        // PATCH: api/eventos/24/confirmar
+        [HttpPatch("{id}/confirmacion")]
+        public async Task<IActionResult> ConfirmarAlerta(int id, [FromBody] bool confirmar)
+        {
+            var resultado = await _mediator.Send(new ConfirmarAlertaCommand(id, confirmar));
+            if (!resultado) return NotFound(new { mensaje = "No se encontró el evento." });
+
+            return NoContent(); // 204 exitoso
+        }
 
 
         // DELETE: api/eventos/{id}
