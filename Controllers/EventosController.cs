@@ -79,7 +79,7 @@ namespace AgendaApi.Controllers
 
             return NoContent(); // Si se actualizó correctamente, devolvemos un 204 No Content
         }
-        // PATCH: api/eventos/24/confirmar
+        // PATCH: api/eventos/24/confirmacion
         [HttpPatch("{id}/confirmacion")]
         public async Task<IActionResult> ConfirmarAlerta(int id, [FromBody] bool confirmar)
         {
@@ -101,8 +101,8 @@ namespace AgendaApi.Controllers
             return NoContent(); // Si se eliminó correctamente, devolvemos un 204 No Content
         }
 
-        [HttpGet("buscar/{titulo}")] // Agregamos un prefijo 'buscar' para no chocar con el ID
-        public async Task<ActionResult<IEnumerable<Evento>>> GetEventoPorTitulo(string titulo)
+        [HttpGet("titulo/{titulo}")] // Agregamos un prefijo 'buscar' para no chocar con el ID
+        public async Task<ActionResult<IEnumerable<Evento>>> GetEventoPorTitulo(string titulo)  
         {
             // Usamos .Where para buscar coincidencias parciales (como un LIKE en SQL)
             var eventos = await _context.Eventos

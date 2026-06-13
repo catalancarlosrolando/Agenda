@@ -41,7 +41,7 @@ export class EventoServices {
     async buscarEvento(titulo) {
         try {
 
-            const res = await fetch(`${this.API_URL}/buscar/${titulo}`);
+            const res = await fetch(`${this.API_URL}/titulo/${titulo}`);
             if (res.ok) {
                 return await res.json();
             }
