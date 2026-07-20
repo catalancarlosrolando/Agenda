@@ -150,7 +150,6 @@ C:\Users\office\Documents\UNIVERSIDAD DE CIENCIAS EXACTAS\3er año\Desarrollo Ba
 C:\Users\office\Documents\UNIVERSIDAD DE CIENCIAS EXACTAS\3er año\Desarrollo Backend 2\Practica 2\Agenda\bin\Debug\net10.0\Agenda.staticwebassets.runtime.json
 C:\Users\office\Documents\UNIVERSIDAD DE CIENCIAS EXACTAS\3er año\Desarrollo Backend 2\Practica 2\Agenda\obj\Debug\net10.0\compressed\26bns9062u-{0}-xlmi2pjjwu-xlmi2pjjwu.gz
 C:\Users\office\Documents\UNIVERSIDAD DE CIENCIAS EXACTAS\3er año\Desarrollo Backend 2\Practica 2\Agenda\obj\Debug\net10.0\compressed\ezzexjvvg7-{0}-3w743b9fgy-3w743b9fgy.gz
-C:\Users\office\Documents\UNIVERSIDAD DE CIENCIAS EXACTAS\3er año\Desarrollo Backend 2\Practica 2\Agenda\obj\Debug\net10.0\compressed\7un2offcbz-{0}-luesonr7mg-luesonr7mg.gz
 C:\Users\office\Documents\UNIVERSIDAD DE CIENCIAS EXACTAS\3er año\Desarrollo Backend 2\Practica 2\Agenda\obj\Debug\net10.0\compressed\lojk2czp2q-{0}-q3jond4ah0-q3jond4ah0.gz
 C:\Users\office\Documents\UNIVERSIDAD DE CIENCIAS EXACTAS\3er año\Desarrollo Backend 2\Practica 2\Agenda\obj\Debug\net10.0\compressed\axisosef2n-{0}-mom276ggpa-mom276ggpa.gz
 C:\Users\office\Documents\UNIVERSIDAD DE CIENCIAS EXACTAS\3er año\Desarrollo Backend 2\Practica 2\Agenda\bin\Debug\net10.0\Namotion.Reflection.dll
@@ -185,3 +184,4 @@ C:\Users\office\Documents\UNIVERSIDAD DE CIENCIAS EXACTAS\3er año\Desarrollo Ba
 C:\Users\office\Documents\UNIVERSIDAD DE CIENCIAS EXACTAS\3er año\Desarrollo Backend 2\Practica 2\Agenda\bin\Debug\net10.0\appsetting.DevelopmentExample.json
 C:\Users\office\Documents\UNIVERSIDAD DE CIENCIAS EXACTAS\3er año\Desarrollo Backend 2\Practica 2\Agenda\obj\Debug\net10.0\compressed\9u9z6nmre7-{0}-jtju1s78eq-jtju1s78eq.gz
 C:\Users\office\Documents\UNIVERSIDAD DE CIENCIAS EXACTAS\3er año\Desarrollo Backend 2\Practica 2\Agenda\obj\Debug\net10.0\compressed\2elylwwdca-{0}-b09g5599w9-b09g5599w9.gz
+C:\Users\office\Documents\UNIVERSIDAD DE CIENCIAS EXACTAS\3er año\Desarrollo Backend 2\Practica 2\Agenda\obj\Debug\net10.0\compressed\7un2offcbz-{0}-3al40mh3ok-3al40mh3ok.gz

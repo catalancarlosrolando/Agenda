@@ -6,6 +6,6 @@ public class HomeController : Controller
     [HttpGet("/")]
     public IActionResult Index()
     {
-        return View(); // Esto busca un archivo llamado Index.cshtml
+        return Redirect("/Index.html");
     }
 }
