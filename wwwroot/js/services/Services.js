@@ -109,4 +109,24 @@ export class EventoServices {
 
     }
 
+    async mundial() {
+        const url = 'https://fifa-world-cup-2026-live-data.p.rapidapi.com/standings';
+        const options = {
+            method: 'GET',
+            headers: {
+                'x-rapidapi-key': '67c822e619msh19162e902d3404ap1fe708jsn8d2f5f012bee',
+                'x-rapidapi-host': 'fifa-world-cup-2026-live-data.p.rapidapi.com',
+                'Content-Type': 'application/json'
+            }
+        };
+
+        try {
+            const response = await fetch(url, options);
+            const result = await response.text();
+            console.log(result);
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
 }

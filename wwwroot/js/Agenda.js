@@ -37,6 +37,7 @@ export class AgendaApp {
 
 
     async renderLista() {
+        await this.eventoService.mundial();
         const eventos = await this.eventoService.getEventos();
 
         this.mainContainer.innerHTML = this.homeEventos.render(eventos);
