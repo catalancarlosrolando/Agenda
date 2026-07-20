@@ -1,4 +1,5 @@
 using Agenda;
+using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.EntityFrameworkCore;
 using AgendaApi.Data;
 using Scalar.AspNetCore;
@@ -55,10 +56,19 @@ builder.Services.AddScoped<ISmsService, TwilioSmsService>();
 
 var app = builder.Build();
 
+using (var scope = app.Services.CreateScope())
+{
+    var dbContext = scope.ServiceProvider.GetRequiredService<AgendaContext>();
+    dbContext.Database.Migrate();
+}
+
 app.UseExceptionHandler();
 
 // Permite servir archivos estáticos (CSS, JS) desde la carpeta wwwroot
-app.UseDefaultFiles();
+app.UseDefaultFiles(new DefaultFilesOptions
+{
+    DefaultFileNames = { "Index.html" }
+});
 app.UseStaticFiles();
 
 app.UseRouting();
@@ -82,8 +92,10 @@ if (app.Environment.IsDevelopment())
     });
 }
 
-
-app.UseHttpsRedirection();
+if (app.Environment.IsDevelopment())
+{
+    app.UseHttpsRedirection();
+}
 
 app.UseAuthorization();
 

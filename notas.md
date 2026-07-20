@@ -298,3 +298,22 @@ Resumen de la Estructura de Carpetas:
     _ViewImports.cshtml (Importaciones comunes para vistas)
 
 /wwwroot (Aquí guardarás tus archivos .css y .js externos)
+
+9. Conclusión
+para desplegar realizar estos cambios.
+
+using (var scope = app.Services.CreateScope())
+{
+    var dbContext = scope.ServiceProvider.GetRequiredService<AgendaContext>();
+    dbContext.Database.Migrate();
+}
+
+app.UseDefaultFiles(new DefaultFilesOptions
+{
+    DefaultFileNames = { "Index.html" }
+});
+
+if (app.Environment.IsDevelopment())
+{
+    app.UseHttpsRedirection();
+}
