@@ -3,6 +3,7 @@ import { Modal } from "./components/modal.js";
 export class ModalEvento {
     constructor(service) {
         this.modalContainer = document.getElementById('modal-container');
+        this.mainContainer = document.getElementById('main-content');
         this.service = service;
     }
 
@@ -19,7 +20,7 @@ export class ModalEvento {
             // 2. Eliminamos cualquier modal previo para no duplicar IDs en el DOM
 
             const html = modal.render(evento);
-            app.mainContainer.insertAdjacentHTML('beforeend', html);
+            this.mainContainer.insertAdjacentHTML('beforeend', html);
             const modalElement = document.getElementById('exampleModal');
             const bootstrapModal = new bootstrap.Modal(modalElement);
 
@@ -33,7 +34,7 @@ export class ModalEvento {
         else {
             //cargar Evento vacío para crear nuevo
             const html = modal.render({ titulo: '', fechaHora: '', prioridad: 1, descripcion: '', telefonoDestino: '', emailDestino: '' });
-            app.mainContainer.insertAdjacentHTML('beforeend', html);
+            this.mainContainer.insertAdjacentHTML('beforeend', html);
             document.getElementById("exampleModalLabel").textContent = "Crear Nuevo Evento o no";
             document.getElementById("button-send").textContent = 'Enviar';
             const modalElement = document.getElementById('exampleModal');
@@ -77,7 +78,7 @@ export class ModalEvento {
             // Cerramos modal y refrescamos la lista
             document.activeElement.blur();
             bootstrapModal.hide();
-            app.renderLista();
+            window.app?.renderLista();
         });
     }
 }
