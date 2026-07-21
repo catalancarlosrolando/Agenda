@@ -61,8 +61,6 @@ export class AgendaApp {
     async guardarEvento() {
         const modalEvento = new ModalEvento(this.eventoService);
         await modalEvento.handleEvento();
-        //await this.eventoService.crearEvento();
-        this.renderLista();
     }
 
     // Modificar evento

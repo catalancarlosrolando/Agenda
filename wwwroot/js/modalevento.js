@@ -2,45 +2,48 @@ import { Modal } from "./components/modal.js";
 
 export class ModalEvento {
     constructor(service) {
-        this.modalContainer = document.getElementById('modal-container');
-        this.mainContainer = document.getElementById('main-content');
         this.service = service;
     }
 
     async handleEvento(id = null) {
+        this.limpiarBackdropsHuerfanos();
+
         const modalViejo = document.getElementById('exampleModal');
-        if (modalViejo) modalViejo.remove();
-        // 3. Creamos el modal
+        if (modalViejo) {
+            modalViejo.remove();
+        }
+
         const modal = new Modal();
+        let guardadoConExito = false;
+
         if (id) {
             const evento = await this.service.getEvento(id);
             const idEvento = evento.id;
-            console.log(evento);
-
-            // 2. Eliminamos cualquier modal previo para no duplicar IDs en el DOM
 
             const html = modal.render(evento);
-            this.mainContainer.insertAdjacentHTML('beforeend', html);
+            document.body.insertAdjacentHTML('beforeend', html);
             const modalElement = document.getElementById('exampleModal');
             const bootstrapModal = new bootstrap.Modal(modalElement);
 
+            this.configurarCierre(modalElement, () => guardadoConExito);
+
             bootstrapModal.show();
 
-            // 4. Escuchamos el submit del formulario dentro del modal y usamos arrow function para mantener el contexto de "this"
-
-            await this.guardarEvento(bootstrapModal, idEvento);
+            guardadoConExito = await this.guardarEvento(bootstrapModal, idEvento);
 
         }
         else {
-            //cargar Evento vacío para crear nuevo
             const html = modal.render({ titulo: '', fechaHora: '', prioridad: 1, descripcion: '', telefonoDestino: '', emailDestino: '' });
-            this.mainContainer.insertAdjacentHTML('beforeend', html);
+            document.body.insertAdjacentHTML('beforeend', html);
             document.getElementById("exampleModalLabel").textContent = "Crear Nuevo Evento o no";
             document.getElementById("button-send").textContent = 'Enviar';
             const modalElement = document.getElementById('exampleModal');
             const bootstrapModal = new bootstrap.Modal(modalElement);
+
+            this.configurarCierre(modalElement, () => guardadoConExito);
+
             bootstrapModal.show();
-            await this.guardarEvento(bootstrapModal);
+            guardadoConExito = await this.guardarEvento(bootstrapModal);
 
         }
 
@@ -48,37 +51,52 @@ export class ModalEvento {
 
     async guardarEvento(bootstrapModal, idEvento = null) {
         const form = document.getElementById('form-modificar');
-        await form.addEventListener('submit', async (e) => {
-            e.preventDefault(); // Evitamos que la página se recargue
+        return await new Promise((resolve) => {
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
 
-            // 1. Capturamos el formulario
-            const formulario = e.target;
+                try {
+                    const formulario = e.target;
+                    const formData = new FormData(formulario);
+                    const datos = Object.fromEntries(formData.entries());
+                    datos.prioridad = parseInt(datos.prioridad, 10);
 
-            // 2. Creamos el objeto FormData
-            const formData = new FormData(formulario);
+                    if (idEvento) {
+                        datos.id = idEvento;
+                        await this.service.actualizarEvento(datos);
+                    }
+                    else {
+                        const { titulo, fechaHora, prioridad, descripcion, telefonoDestino, emailDestino } = datos;
+                        const eventoNuevo = { titulo, fechaHora, prioridad, descripcion, telefonoDestino, emailDestino };
+                        await this.service.crearEvento(eventoNuevo);
+                    }
 
-            // 3. Convertimos FormData a un Objeto JSON plano para .NET
-            const datos = Object.fromEntries(formData.entries());
-
-            // 4. Ajustes de tipos (FormData siempre devuelve strings)
-            datos.prioridad = parseInt(datos.prioridad);
-
-            if (idEvento) {
-                // Si hay ID, es una actualización
-                datos.id = idEvento;
-                const res = await this.service.actualizarEvento(datos);
-
-            }
-            else {
-                // Si no hay ID, es una creación
-                const { titulo, fechaHora, prioridad, descripcion, telefonoDestino, emailDestino } = datos;
-                const eventoNuevo = { titulo, fechaHora, prioridad, descripcion, telefonoDestino, emailDestino };
-                await this.service.crearEvento(eventoNuevo);
-            }
-            // Cerramos modal y refrescamos la lista
-            document.activeElement.blur();
-            bootstrapModal.hide();
-            window.app?.renderLista();
+                    document.activeElement?.blur();
+                    bootstrapModal.hide();
+                    resolve(true);
+                } catch (error) {
+                    console.error(error);
+                    alert('No se pudo guardar el evento. Revisá los datos e intentá nuevamente.');
+                    resolve(false);
+                }
+            }, { once: true });
         });
+    }
+
+    configurarCierre(modalElement, fueGuardado) {
+        modalElement.addEventListener('hidden.bs.modal', () => {
+            modalElement.remove();
+            this.limpiarBackdropsHuerfanos();
+
+            if (fueGuardado()) {
+                window.app?.renderLista();
+            }
+        }, { once: true });
+    }
+
+    limpiarBackdropsHuerfanos() {
+        document.querySelectorAll('.modal-backdrop').forEach((backdrop) => backdrop.remove());
+        document.body.classList.remove('modal-open');
+        document.body.style.removeProperty('padding-right');
     }
 }

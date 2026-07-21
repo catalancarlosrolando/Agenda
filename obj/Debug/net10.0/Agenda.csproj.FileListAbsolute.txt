@@ -181,8 +181,8 @@ C:\Users\office\Documents\UNIVERSIDAD DE CIENCIAS EXACTAS\3er año\Desarrollo Ba
 C:\Users\office\Documents\UNIVERSIDAD DE CIENCIAS EXACTAS\3er año\Desarrollo Backend 2\Practica 2\Agenda\bin\Debug\net10.0\appsetting.DevelopmentExample.json
 C:\Users\office\Documents\UNIVERSIDAD DE CIENCIAS EXACTAS\3er año\Desarrollo Backend 2\Practica 2\Agenda\obj\Debug\net10.0\compressed\2elylwwdca-{0}-3hvvjzbkk9-3hvvjzbkk9.gz
 C:\Users\office\Documents\UNIVERSIDAD DE CIENCIAS EXACTAS\3er año\Desarrollo Backend 2\Practica 2\Agenda\obj\Debug\net10.0\compressed\cq5s39zt1d-{0}-xlmi2pjjwu-xlmi2pjjwu.gz
-C:\Users\office\Documents\UNIVERSIDAD DE CIENCIAS EXACTAS\3er año\Desarrollo Backend 2\Practica 2\Agenda\obj\Debug\net10.0\compressed\9u9z6nmre7-{0}-plo34mq95e-plo34mq95e.gz
 C:\Users\office\Documents\UNIVERSIDAD DE CIENCIAS EXACTAS\3er año\Desarrollo Backend 2\Practica 2\Agenda\obj\Debug\net10.0\compressed\7un2offcbz-{0}-s7a08w0mbl-s7a08w0mbl.gz
-C:\Users\office\Documents\UNIVERSIDAD DE CIENCIAS EXACTAS\3er año\Desarrollo Backend 2\Practica 2\Agenda\obj\Debug\net10.0\compressed\nekq49olhx-{0}-kh39vcseww-kh39vcseww.gz
 C:\Users\office\Documents\UNIVERSIDAD DE CIENCIAS EXACTAS\3er año\Desarrollo Backend 2\Practica 2\Agenda\obj\Debug\net10.0\compressed\fw94wx7ehe-{0}-7y3e6zuski-7y3e6zuski.gz
 C:\Users\office\Documents\UNIVERSIDAD DE CIENCIAS EXACTAS\3er año\Desarrollo Backend 2\Practica 2\Agenda\obj\Debug\net10.0\compressed\brz9pc896h-{0}-y58g3z9xkb-y58g3z9xkb.gz
+C:\Users\office\Documents\UNIVERSIDAD DE CIENCIAS EXACTAS\3er año\Desarrollo Backend 2\Practica 2\Agenda\obj\Debug\net10.0\compressed\9u9z6nmre7-{0}-hocqqkydzg-hocqqkydzg.gz
+C:\Users\office\Documents\UNIVERSIDAD DE CIENCIAS EXACTAS\3er año\Desarrollo Backend 2\Practica 2\Agenda\obj\Debug\net10.0\compressed\nekq49olhx-{0}-vrbnm574vw-vrbnm574vw.gz
